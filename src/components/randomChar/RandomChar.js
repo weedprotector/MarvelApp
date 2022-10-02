@@ -1,5 +1,6 @@
 import { Component } from 'react/cjs/react.production.min';
 import Spinner from '../spinner/Spinner';
+import ErrorMessege from '../errorMessage/ErrorMessage';
 import MarvelService from '../../services/MarvelService';
 import './randomChar.scss';
 import mjolnir from '../../resources/img/mjolnir.png';
@@ -12,7 +13,8 @@ class RandomChar extends Component {
 
     state = {
         char: {},
-        loading: true
+        loading: true,
+        error: false
     }
 
     marvelService = new MarvelService();
@@ -20,7 +22,15 @@ class RandomChar extends Component {
     onCharLoaded = (char) => {
         this.setState({
             char,
-            loading: false})
+            loading: false
+        })
+    }
+
+    onError = () => {
+        this.setState({
+            loading: false,
+            error: true
+        })
     }
 
     updateChar = () => {
@@ -29,16 +39,22 @@ class RandomChar extends Component {
             .getCharacter(id)
             //.then(this.onCharLoaded) Если в then приходит ссылка на функцию, то аргумент, который приходит в then автоматически подставится в функцию
             .then(this.onCharLoaded)
+            .catch(this.onError);
     }
 
    
 
     render() {
-        const {char, loading} = this.state;
+        const {char, loading, error} = this.state;
+        const errorMessage = error ? <ErrorMessege/> : null;
+        const spinner = loading ? <Spinner/> : null;
+        const content = !(loading || error) ? <View char={char}/> : null;
 
         return (
             <div className="randomchar">
-                {loading ? <Spinner/> : <View char={char}/>}
+                {errorMessage}
+                {spinner}
+                {content}
                 <div className="randomchar__static">
                     <p className="randomchar__title">
                         Random character for today!<br/>
