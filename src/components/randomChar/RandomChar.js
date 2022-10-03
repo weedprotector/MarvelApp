@@ -25,6 +25,12 @@ class RandomChar extends Component {
         })
     }
 
+    onCharLoading = () => {
+        this.setState({
+            loading: true
+        })
+    }
+
     onError = () => {
         this.setState({
             loading: false,
@@ -34,6 +40,7 @@ class RandomChar extends Component {
 
     updateChar = () => {
         const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
+        this.onCharLoading();
         this.marvelService
             .getCharacter(id)
             //.then(this.onCharLoaded) Если в then приходит ссылка на функцию, то аргумент, который приходит в then автоматически подставится в функцию
@@ -77,7 +84,6 @@ class RandomChar extends Component {
 const View = ({char}) => {
     const {name, description, thumbnail, homepage, wiki} = char;
     const objFit = thumbnail.includes("image_not_available") ? "contain" : "cover";
-    console.log(objFit);
 
     return (
         <div className="randomchar__block">
