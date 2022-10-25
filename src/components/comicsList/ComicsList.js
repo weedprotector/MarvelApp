@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import useMarvelService from '../../services/MarvelService';
@@ -8,7 +9,7 @@ const ComicsList = () => {
 
     const [comicsList, setComicsList] = useState([]);
     const [newItemLoading, setNewItemLoading] = useState(false);
-    const [offset, setOffset] = useState(160);
+    const [offset, setOffset] = useState(30);
     const [comicsEnded, setComicsEnded] = useState(false);
 
     const {loading, error, getAllComics} = useMarvelService();
@@ -41,19 +42,14 @@ const ComicsList = () => {
             if (item.thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
                 imgStyle = {'objectFit' : 'unset'};
             }
-            let price = item.price;
-            if (price === '0$') {
-                price = 'Not available';
-            }
-
 
             return (
                 <li className="comics__item" key={item.id}>
-                    <a href={item.url}>
+                    <Link to={`/comics/${item.id}`}>
                         <img src={item.thumbnail} alt="ultimate war" className="comics__item-img" style={imgStyle}/>
                         <div className="comics__item-name">{item.title}</div>
-                        <div className="comics__item-price">{price}</div>
-                    </a>
+                        <div className="comics__item-price">{item.price}</div>
+                    </Link>
                 </li>
             )
         });

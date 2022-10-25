@@ -16,7 +16,6 @@ const CharList = (props) => {
 
     useEffect(() => {
         onRequest(offset, true);
-        console.log('один раз уебало')
     }, [])
 
     const onRequest = (offset, initial) => {

@@ -8,7 +8,7 @@ const Page404 = () => {
             <div className="error__text">
                 <h1>404 page not found</h1>
                 <h4>HYDRA has stolen this page from S.H.I.E.L.D. database!</h4>
-                <p>Check that you typed the address correctly, go back to your previous page <br/> or try using our site search to find something specific.</p>
+                <p>Check that you typed the address correctly, go back to your previous page <br/> or click this button.</p>
                 <Link to={'/MarvelApp'} className="button button__main">
                     <div className="inner">Homepage</div>
                 </Link>
