@@ -1,23 +1,27 @@
 {
   "files": {
-    "main.css": "/MarvelApp/static/css/main.c234112a.chunk.css",
-    "main.js": "/MarvelApp/static/js/main.1957f295.chunk.js",
-    "main.js.map": "/MarvelApp/static/js/main.1957f295.chunk.js.map",
+    "main.css": "/MarvelApp/static/css/main.2d86277a.chunk.css",
+    "main.js": "/MarvelApp/static/js/main.670073e8.chunk.js",
+    "main.js.map": "/MarvelApp/static/js/main.670073e8.chunk.js.map",
     "runtime-main.js": "/MarvelApp/static/js/runtime-main.3b14267b.js",
     "runtime-main.js.map": "/MarvelApp/static/js/runtime-main.3b14267b.js.map",
-    "static/js/2.f6a9a5cd.chunk.js": "/MarvelApp/static/js/2.f6a9a5cd.chunk.js",
-    "static/js/2.f6a9a5cd.chunk.js.map": "/MarvelApp/static/js/2.f6a9a5cd.chunk.js.map",
+    "static/js/2.d8b13a2b.chunk.js": "/MarvelApp/static/js/2.d8b13a2b.chunk.js",
+    "static/js/2.d8b13a2b.chunk.js.map": "/MarvelApp/static/js/2.d8b13a2b.chunk.js.map",
     "index.html": "/MarvelApp/index.html",
-    "static/css/main.c234112a.chunk.css.map": "/MarvelApp/static/css/main.c234112a.chunk.css.map",
-    "static/js/2.f6a9a5cd.chunk.js.LICENSE.txt": "/MarvelApp/static/js/2.f6a9a5cd.chunk.js.LICENSE.txt",
+    "static/css/main.2d86277a.chunk.css.map": "/MarvelApp/static/css/main.2d86277a.chunk.css.map",
+    "static/js/2.d8b13a2b.chunk.js.LICENSE.txt": "/MarvelApp/static/js/2.d8b13a2b.chunk.js.LICENSE.txt",
+    "static/media/404.ea7edaaa.jpg": "/MarvelApp/static/media/404.ea7edaaa.jpg",
+    "static/media/Avengers.4065c8f9.png": "/MarvelApp/static/media/Avengers.4065c8f9.png",
+    "static/media/Avengers_logo.9eaf2193.png": "/MarvelApp/static/media/Avengers_logo.9eaf2193.png",
     "static/media/error.42292aa1.gif": "/MarvelApp/static/media/error.42292aa1.gif",
     "static/media/mjolnir.61f31e18.png": "/MarvelApp/static/media/mjolnir.61f31e18.png",
-    "static/media/vision.067d4ae1.png": "/MarvelApp/static/media/vision.067d4ae1.png"
+    "static/media/vision.067d4ae1.png": "/MarvelApp/static/media/vision.067d4ae1.png",
+    "static/media/x-men.41b39e19.png": "/MarvelApp/static/media/x-men.41b39e19.png"
   },
   "entrypoints": [
     "static/js/runtime-main.3b14267b.js",
-    "static/js/2.f6a9a5cd.chunk.js",
-    "static/css/main.c234112a.chunk.css",
-    "static/js/main.1957f295.chunk.js"
+    "static/js/2.d8b13a2b.chunk.js",
+    "static/css/main.2d86277a.chunk.css",
+    "static/js/main.670073e8.chunk.js"
   ]
 }
