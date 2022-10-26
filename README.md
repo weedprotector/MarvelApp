@@ -1,1 +1,1 @@
-https://weedprotector.github.io/MarvelApp
+https://weedprotector.github.io/MarvelApp/build
