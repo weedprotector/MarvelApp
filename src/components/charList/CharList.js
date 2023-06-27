@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import {
+    CSSTransition,
+    TransitionGroup,
+  } from 'react-transition-group';
 import PropTypes from 'prop-types'
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
@@ -46,21 +50,31 @@ const CharList = (props) => {
             let clazz = (item.id === props.selectedId) ? 'char__item char__item_selected' : 'char__item'
 
             return (
-                <li 
-                    className={clazz}
-                    tabIndex={0}
+                <CSSTransition
+                    timeout={500}
                     key={item.id}
-                    onClick={() => {props.onCharSelected(item.id)}}>
-                        <img src={item.thumbnail} alt={item.name} style={imgStyle}/>
-                        <div className="char__name">{item.name}</div>
-                </li>
+                    classNames="char__item">
+                    <li 
+                        className={clazz}
+                        tabIndex={0}
+                        
+                        onClick={() => {props.onCharSelected(item.id)}}>
+                            <img src={item.thumbnail} alt={item.name} style={imgStyle}/>
+                            <div className="char__name">{item.name}</div>
+                    </li>
+                </CSSTransition>
             )
         });
 
         return (
+            
             <ul className="char__grid">
-                {items}
-            </ul>
+                <TransitionGroup component={null}>
+                    {items}
+                </TransitionGroup>
+            </ul> 
+            
+              
         )
     }
     
