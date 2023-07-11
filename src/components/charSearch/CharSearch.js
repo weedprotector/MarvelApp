@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Formik, Field, Form, ErrorMessage as FormikErrorMessage } from 'formik';
+import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 
 import useMarvelService from '../../services/MarvelService';
@@ -27,9 +28,9 @@ const CharSearch = () => {
     const results = !char ? null : char.length > 0 ? 
                     <div className='char-search__wrapper'>
                         <div className='char-search__success'>There is! Visit {char[0].name} page?</div>
-                        <a href='http' className="button button__secondary">
+                        <Link to={`/MarvelApp/${char[0].id}`} className="button button__secondary">
                             <div className="inner">To page</div>
-                        </a>
+                        </Link>
                     </div> :
                     <div className='char-search__error'>
                         The character was not found. Check the name and try again
@@ -48,7 +49,7 @@ const CharSearch = () => {
                     updateChar(charName);
                 }}
             >  
-                <Form>
+                <Form onChange={e => !e.target.value ? setChar(null) : null}>
                     <label className='char-search__tittle' htmlFor="charName">Or find a character by name:</label>
                     <Field 
                         className='char-search__input'
