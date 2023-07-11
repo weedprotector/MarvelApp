@@ -13,7 +13,7 @@ const CharList = (props) => {
 
     const [charList, setCharList] = useState([]);
     const [newItemLoading, setNewItemLoading] = useState(false);
-    const [offset, setOffset] = useState(210);
+    const [offset, setOffset] = useState(185);
     const [charEnded, setCharEnded] = useState(false);
     
     const {loading, error, getAllCharacters} = useMarvelService();
@@ -67,14 +67,11 @@ const CharList = (props) => {
         });
 
         return (
-            
             <ul className="char__grid">
                 <TransitionGroup component={null}>
                     {items}
                 </TransitionGroup>
-            </ul> 
-            
-              
+            </ul>   
         )
     }
     

@@ -1,0 +1,70 @@
+.char-search {
+    display: block;
+    margin-top: 30px;
+    padding: 25px;
+    background: #FFF;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+
+    &__success {
+        align-self: center;
+        color: #03710E;
+        font-size: 18px;
+        font-family: Roboto Condensed;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    &__error {
+        margin-top: 25px;
+        color: #9F0013;
+        font-size: 18px;
+        font-family: Roboto Condensed;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    &__title {
+        display: block;
+        color: #000;
+        font-size: 18px;
+        font-family: Roboto Condensed;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    &__input {
+        margin-top: 15px;
+        margin-right: 24px;
+        width: 250px;
+        height: 38px;
+        padding: 10px;
+        background: #FFF;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        border: none;
+        ::placeholder {
+            color: red;
+            font-size: 14px;
+            font-family: Roboto Condensed;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+    &__input::placeholder {
+        color: rgba(0, 0, 0, 0.50);
+        font-size: 14px;
+        font-family: Roboto Condensed;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
