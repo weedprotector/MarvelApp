@@ -1,5 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+
 import Spinner from '../spinner/Spinner';
 import ErrorMessege from '../errorMessage/ErrorMessage';
 import Skeleton from '../skeleton/Skeleton'
@@ -42,13 +44,19 @@ const SingleCharacterPage = () => {
 }
 
 const View = ({character}) => {
-    const {title, description, thumbnail} = character
+    const {name, description, thumbnail} = character
 
     return (
         <div className="single-comic">
-            <img src={thumbnail} alt={title} className="single-comic__img" style={{width: '293px', height: '293px'}}/>
+            <Helmet>
+                <meta
+                    name="description"
+                    content={`${name} character page`}
+                />
+                <title>{name}</title>
+            </Helmet>
+            <img src={thumbnail} alt={name} className="single-comic__img" style={{width: '293px', height: '293px'}}/>
             <div className="single-comic__info">
-                <h2 className="single-comic__name">{title}</h2>
                 <p className="single-comic__descr">{description}</p>
             </div>
         </div>
